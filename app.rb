@@ -4,7 +4,11 @@ require 'RMagick'
 # http://www.imagemagick.org/RMagick/doc/usage.html
 
 get '/' do
-  "You fucking blow."
+  if params[:name] && !params[:name].empty?
+    "#{params[:name]} fucking blows."
+  else
+    "You fucking blow."
+  end
 end
 
 get '/:key' do
