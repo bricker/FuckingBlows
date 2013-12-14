@@ -3,6 +3,10 @@ require 'rmagick'
 
 # http://www.imagemagick.org/RMagick/doc/usage.html
 
+get '/' do
+  "You fucking blow."
+end
+
 get '/:key' do
   content_type 'image/png'
 
