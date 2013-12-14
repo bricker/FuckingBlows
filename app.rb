@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'rmagick'
+require 'RMagick'
 
 # http://www.imagemagick.org/RMagick/doc/usage.html
 
