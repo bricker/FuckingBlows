@@ -86,7 +86,7 @@ get '/:key' do
     credit_text.annotate(image, 200, 200, 30, 275, credit) do
       credit_text.gravity = Magick::NorthWestGravity
 
-      self.font         = "AvantGarde-BookOblique"
+      self.font         = "AvantGarde-DemiOblique"
       self.pointsize    = 30
       self.font_weight  = Magick::BoldWeight
 
