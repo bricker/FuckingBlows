@@ -11,19 +11,18 @@ LOCATIONS = {
 FONTS = [
   "AvantGarde-Book",
   "AvantGarde-BookOblique",
-  "AvantGarde-Demi",
+  # "AvantGarde-Demi", # Too boring
   "AvantGarde-DemiOblique",
   "Bookman-Demi",
   "Bookman-DemiItalic",
   "Bookman-Light",
-  "Bookman-LightItalic",
-  "Courier",
-  "Courier-Bold",
-  "Courier-BoldOblique",
-  "Courier-Oblique",
-  "fixed",
+  "Bookman-LightItalic", "Bookman-LightItalic",
+  # "Courier", # Too wide
+  # "Courier-Bold", # Too wide
+  # "Courier-BoldOblique", # Too wide
+  # "Courier-Oblique", # Too wide
   "Helvetica",
-  "Helvetica-Bold",
+  # "Helvetica-Bold", # Too boring
   "Helvetica-BoldOblique",
   "Helvetica-Narrow",
   "Helvetica-Narrow-Bold",
@@ -32,17 +31,17 @@ FONTS = [
   "Helvetica-Oblique",
   "NewCenturySchlbk-Bold",
   "NewCenturySchlbk-BoldItalic",
-  "NewCenturySchlbk-Italic",
+  "NewCenturySchlbk-Italic", "NewCenturySchlbk-Italic",
   "NewCenturySchlbk-Roman",
   "Palatino-Bold",
-  "Palatino-BoldItalic",
+  "Palatino-BoldItalic", "Palatino-BoldItalic",
   "Palatino-Italic",
   "Palatino-Roman",
   "Symbol", "Symbol",
-  "Times-Bold",
-  "Times-BoldItalic",
+  # "Times-Bold", # boring
+  "Times-BoldItalic", "Times-BoldItalic",
   "Times-Italic",
-  "Times-Roman"
+  # "Times-Roman" # boring
 ]
 
 
@@ -65,12 +64,15 @@ get '/:key' do
   credit_text     = Magick::Draw.new
 
   if !subject.empty?
-    message = "\"#{subject}\nfucking blows!\""
+    message = "\"#{subject}\n fucking blows!\""
+
+    font = params[:font] || FONTS.sample
+    $stdout.puts font
 
     message_text.annotate(image, 200, 200, 30, 100, message) do
       message_text.gravity = Magick::NorthWestGravity
 
-      self.font               = FONTS.sample
+      self.font               = font
       self.pointsize          = 72
       self.interline_spacing  = 10
 
