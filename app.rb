@@ -38,7 +38,7 @@ FONTS = [
   "Palatino-BoldItalic",
   "Palatino-Italic",
   "Palatino-Roman",
-  "Symbol",
+  "Symbol", "Symbol",
   "Times-Bold",
   "Times-BoldItalic",
   "Times-Italic",
